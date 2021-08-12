@@ -1,8 +1,9 @@
 {
   "name": "@juit/vite-plugin-vue-svg",
   "version": "1.0.0",
-  "description": "Vite Plugin to support SVG components",
+  "description": "SVG support for Vue/Vite (with TypeScript!)",
   "main": "dist/plugin.js",
+  "types": "dist/plugin.d.ts",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/juitnow/juit-vite-plugin-vue-svg.git"
@@ -25,8 +26,7 @@
     "svgo": "^2.3.1"
   },
   "peerDependencies": {
-    "vite": "^2",
-    "vue": "^3"
+    "vite": "^2"
   },
   "devDependencies": {
     "@types/node": "<15",
