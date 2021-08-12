@@ -26,7 +26,8 @@
     "svgo": "^2.3.1"
   },
   "peerDependencies": {
-    "vite": "^2"
+    "vite": "^2",
+    "vue": "^3"
   },
   "devDependencies": {
     "@types/node": "<15",
@@ -36,6 +37,7 @@
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-deprecation": "^1.2.1",
     "typescript": "^4.3.5",
-    "vite": "^2.4.4"
+    "vite": "^2.4.4",
+    "vue": "^3.2.2"
   }
 }
