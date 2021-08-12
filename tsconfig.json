@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "lib": [ "es2020" ],
+    "types": [ "node" ],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "removeComments": false,
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "sourceMap": true,
+    "inlineSourceMap": false,
+    "strict": true,
+    "target": "es2020",
+    "declaration": true,
+    "allowJs": false
+  },
+  "include": [ "src" ],
+}
