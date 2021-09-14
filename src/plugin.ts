@@ -14,7 +14,11 @@ export default function(options: OptimizeOptions = {}): Plugin {
       void ssr
 
       // If not our own, then return undefined
-      if (! path.endsWith('.svg?component')) return
+      const match = path.match(/\.svg\?component(-raw)?$/)
+      if (! match) return
+
+      // If we match ".svg?component-raw" do NOT optimize
+      const optimized = !match[1]
 
       // The filename (basically, id w/o '?component')
       const filename = path.slice(0, -10)
@@ -22,8 +26,10 @@ export default function(options: OptimizeOptions = {}): Plugin {
       // Read up the source from the file
       const source = await readFile(filename, 'utf-8')
 
-      // Optimize the SVG code
-      const svg = optimize(source, { ...options, path: filename })
+      // Optimize the SVG code if necessary
+      const svg = optimized ?
+          optimize(source, { ...options, path: filename }).data :
+          source
 
       // Create an ID from filename + hash
       const id = createHash('sha256')
@@ -33,7 +39,7 @@ export default function(options: OptimizeOptions = {}): Plugin {
           .substr(0, 8)
 
       const compiled = compileTemplate({
-        source: svg.data,
+        source: svg,
         filename,
         id,
         compilerOptions: {
