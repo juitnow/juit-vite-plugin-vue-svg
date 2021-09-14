@@ -41,10 +41,16 @@ of your `.d.ts` files:
 /// <reference types="@juit/vite-plugin-vue-svg/client" />
 ```
 
-Or simply add a definition for `*.svg?component` modules:
+Or simply add a couple of definition for `*.svg?component` and
+`*.svg?component-raw` modules:
 
 ```typescript
 declare module '*.svg?component' {
+  const component: { render: Function }
+  export default component
+}
+
+declare module '*.svg?component-raw' {
   const component: { render: Function }
   export default component
 }
@@ -58,20 +64,24 @@ in your `.vue` file:
 ```html
 <template>
   <div>
-    <SvgImage />
+    <svg-image />
   </div>
 </template>
 
 <script>
-import SvgImage from './asset/image.svg?component'
+import svgImage from './asset/image.svg?component'
 
 export default {
   components: {
-    SvgImage,
+    svgImage,
   },
 };
 </script>
 ```
+
+If you prefer to skip the [`svgo`][2] optimization all together (useful
+for example when preserving `clipPath`s within `defs`) simply import your
+file as `image.svg?component-raw`.
 
 ### License
 
