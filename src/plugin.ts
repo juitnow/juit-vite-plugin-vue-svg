@@ -21,7 +21,7 @@ export default function(options: OptimizeOptions = {}): Plugin {
       const optimized = !match[1]
 
       // The filename (basically, id w/o '?component')
-      const filename = path.slice(0, -10)
+      const filename = path.slice(0, optimized ? -10 : -14)
 
       // Read up the source from the file
       const source = await readFile(filename, 'utf-8')
