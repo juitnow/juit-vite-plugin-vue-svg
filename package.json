@@ -1,9 +1,10 @@
 {
   "name": "@juit/vite-plugin-vue-svg",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "SVG support for Vue/Vite (with TypeScript!)",
   "main": "dist/plugin.js",
   "types": "dist/plugin.d.ts",
+  "deprecated": "Use \"vue-svg-loader\"",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/juitnow/juit-vite-plugin-vue-svg.git"
