@@ -1,3 +1,7 @@
+# ARCHIVED
+
+Use the newer [`vite-svg-loader`](https://www.npmjs.com/package/vite-svg-loader)
+
 # SVG support for Vue/Vite (with TypeScript!)
 
 This plugin allows SVG images to be used as Vue components.
